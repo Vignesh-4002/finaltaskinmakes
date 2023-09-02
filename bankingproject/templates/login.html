@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+login-page
+{% endblock %}
+<br><br><br>
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div style="background-color:#133C32 ">
+<div class="row" style="padding-top:70px;">
+    <div class="col-md-6">
+        <div>
+            <img src="{% static 'images/hero_2.jpg' %}" >
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group" style="padding-top:90px;">
+            <form method="post">
+    {% csrf_token %}
+    <fieldset>
+           <legend>login</legend>
+        <input type="text" name="username" placeholder="Enter Username" class="form-control"><br>
+        <input type="password" name="password" placeholder="Enter password" class="form-control"><br>
+        <input type="submit" value="Login" class="form-control btn btn-success" ><br><br>
+
+    </fieldset>
+    <div class="container form-group">
+        <div>
+            <a href="" class="btn btn-primary form-control">Register</a>
+        </div>
+
+    </div>
+</form>
+
+        </div>
+    </div>
+
+
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

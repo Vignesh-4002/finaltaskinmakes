@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+<br><br><br>
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport">
+<style>
+    input.checkboxlarge{
+    margin-top:20px;
+    width:22px;
+    height:22px;
+    }
+    label.card{
+
+    margin-right:400px;
+    }
+    input.check{
+        margin-top:100px;
+       margin-left:50px;
+    }
+
+</style>
+
+
+</head>
+<body>
+<div style="background-color:#133C32 ">
+<div class="row" style="padding-top:70px;">
+    <div class="col-md-6">
+        <div>
+            <img src="{% static 'images/hero_2.jpg' %}" >
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group" style="padding-top:10px;">
+            <form method="post">
+    {% csrf_token %}
+    <fieldset>
+           <legend><h2>Form</h2></legend>
+        <input type="text" name="name" placeholder="Enter Name" class="form-control"><br>
+        <input type="date" name="date" placeholder="Enter your DOB" class="form-control"><br>
+        <input type="number" name="age" placeholder="Enter your Age" class="form-control"><br>
+        <select class="form-control" name="gender">
+            <option value="">Select gender...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br>
+        <input type="number" name="phonenumber" placeholder="Enter Phone Number" class="form-control"><br>
+        <input type="email" name="email" placeholder="Enter your Mail id" class="form-control"><br>
+        <input type="text" name="address" placeholder="Enter address" class="form-control"><br>
+        <select class="form-control" name="district" id="district">
+        <option value="" selected="selected">Select Branch District</option>
+        </select>
+        <br>
+        <select class="form-control" name="branch" id="branch">
+        <option value="" selected="selected">Select Branch</option>
+        </select>
+        <br>
+        <select class="form-control" name="account" id="account">
+            <option value="">Select Account Type</option>
+            <option value="account">Savings</option>
+            <option value="account">Current</option>
+        </select>
+        <br>
+        <label class="form-control" for="materials">Materials Provided</label><br>
+
+
+        <div class="input-group mb-3">
+            <input class="check checkboxlarge form-check-input mt-0" type="checkbox" name="button_addon1" id="button_addon1">&nbsp;&nbsp;
+            <label for="button_addon1" class="form-control card" >Credit Card</label>
+        </div>
+        <div class="input-group mb-3">
+            <input class="check checkboxlarge form-check-input mt-0" type="checkbox" name="button_addon1" id="button_addon1">&nbsp;&nbsp;
+            <label for="button_addon1" class="form-control card" >Debit Card</label>
+        </div>
+        <div class="input-group mb-3">
+            <input class="check checkboxlarge form-check-input mt-0" type="checkbox" name="button_addon1" id="button_addon1">&nbsp;&nbsp;
+            <label for="button_addon1" class="form-control card" >Cheque Book</label>
+        </div>
+
+
+        <input class="btn btn-primary form-control" type="submit" value="Submit"><br><br>
+        <a class="btn btn-secondary form-control" href="{% url 'userlogout' %}">Logout</a>
+
+
+
+    </fieldset>
+
+</form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script src="{% static 'js/finalform.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}
